@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P3DXRCL');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3DXRCL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+
+
+window.blackcrow = window.blackcrow || [];
+
+var blackCrowScoreUpdateBinding = {
+    app_name: 'audience',
+    bind: 'score_update',
+    callback: scoreUpdateHandler,
+    timeout: setTimeout(function() {
+        blackCrowScoreUpdateBinding.timeoutReached = true;
+        // handle failure state as desired
+        scoreUpdateHandler('err');
+    }, 3000)
+};
+
+window.blackcrow.push(blackCrowScoreUpdateBinding);
+
+function scoreUpdateHandler(scoreObj) {
+    console.log(scoreObj);
+    // {score: '1'} or ‘err’ if timeout was reached
+
+var score= Object.values(scoreObj);
+
+
+	if (score < 4) {
+        document.body.style.backgroundColor = "red";
+        }
+        else  
+        if (score >= 4 and score<= 7)  
+        {
+        document.body.style.backgroundColor = "yellow";
+        }  
+        else  
+        if (score >= 8)  
+        {
+        document.body.style.backgroundColor = "green";
+        }
+
+
+}
+
+
+</script>
+
+</body>
+</html>
